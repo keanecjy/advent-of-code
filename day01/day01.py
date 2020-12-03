@@ -1,33 +1,18 @@
 newList = list(open("Day01Input.txt", "r"))
-newList = map(int, newList)
-newList = sorted(newList)
+newList = list(map(int, newList))
 
 sumNeeded = 2020
-left = 0
-right = len(newList) - 1
+hashSet = set()
 
-
-def getSum(left, right):
-    while left < right:
-        x = int(newList[left])
-        y = int(newList[right])
-        curr = x + y
-        if curr == sumNeeded:
-            return x, y
-        elif curr < sumNeeded:
-            left += 1
-        else:  # curr > sumNeeded
-            right -= 1
-
-
-first, second = getSum(left, right)
-print(first * second)
+for i in newList :
+    value = sumNeeded - i
+    if value in hashSet:
+        print(i * value)
+    hashSet.add(i)
 
 # Faster solution
-
 from itertools import combinations
 
 for a, b in combinations(newList, 2):
     if a + b == 2020:
         print(a * b)
-        break

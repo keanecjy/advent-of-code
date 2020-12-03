@@ -1,29 +1,29 @@
-newList = list(open("Day01Input.txt", "r"))
-newList = map(int, newList)
-newList = sorted(newList)
+new_list = list(open("Day01Input.txt", "r"))
+new_list = map(int, new_list)
+new_list = sorted(new_list)
 
-totalSum = 2020
-right = len(newList) - 1
+total = 2020
+length = len(new_list) - 1
 
 
-def getSum(left, right, sumNeeded):
+def get_sum(left, right, sum_needed):
     while left < right:
-        x = newList[left]
-        y = newList[right]
-        curr = x + y
-        if curr == sumNeeded:
-            return x, y
-        elif curr < sumNeeded:
+        first = new_list[left]
+        second = new_list[right]
+        curr = first + second
+        if curr == sum_needed:
+            return first, second
+        elif curr < sum_needed:
             left += 1
-        else:  # curr > sumNeeded
+        else:  # curr > sum_needed
             right -= 1
     return -1, -1
 
 
-for i in range(0, right - 2):
-    current = newList[i]
-    twoSum = totalSum - current
-    (x, y) = getSum(i + 1, right, twoSum)
+for i in range(0, length - 2):
+    current = new_list[i]
+    two_sum = total - current
+    (x, y) = get_sum(i + 1, length, two_sum)
     if x != -1:
         print(current * x * y)
 
@@ -31,7 +31,7 @@ for i in range(0, right - 2):
 
 from itertools import combinations
 
-for a, b, c in combinations(newList, 3):
+for a, b, c in combinations(new_list, 3):
     if a + b + c == 2020:
         print(a * b * c)
         break

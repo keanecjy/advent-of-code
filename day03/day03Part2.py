@@ -2,25 +2,25 @@ f = open('day03Input.txt', 'r').read()
 
 array = f.split('\n')
 
-lengthHorizontal = len(array[0])
+length_horizontal = len(array[0])
 
 
-def getNumberOfTrees(dx, dy):
+def get_number_of_trees(dx, dy):
     x = 0
     count = 0
 
-    for yIdx in range(0, len(array), dy):
-        if array[yIdx][x] == '#':
+    for y in range(0, len(array), dy):
+        if array[y][x] == '#':
             count += 1
-        x = (x + dx) % lengthHorizontal
+        x = (x + dx) % length_horizontal
     return count
 
 
-accessArray = ((1, 1), (3, 1), (5, 1), (7, 1), (1, 2))
+access_array = ((1, 1), (3, 1), (5, 1), (7, 1), (1, 2))
 
 val = 1
 
-for i in accessArray:
-    val = val * getNumberOfTrees(i[0], i[1])
+for i in access_array:
+    val = val * get_number_of_trees(i[0], i[1])
 
 print(val)

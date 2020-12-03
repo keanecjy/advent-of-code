@@ -1,7 +1,7 @@
 f = open("Day02Input.txt", "r")
 
 
-def splitString(string):
+def split_string(string):
     arr = string.split('-', 2)
     first = int(arr[0])
     rem = arr[1].split(' ', 3)
@@ -12,8 +12,8 @@ def splitString(string):
     return first, second, letter, last
 
 
-def hasSufficientLetter(line):
-    first, second, letter, string = splitString(line)
+def has_sufficient_letters(string):
+    first, second, letter, string = split_string(string)
     count = 0
     for x in string:
         if x == letter:
@@ -25,7 +25,7 @@ def hasSufficientLetter(line):
 num = 0
 
 for line in f:
-    if hasSufficientLetter(line):
+    if has_sufficient_letters(line):
         num += 1
 
 print(num)

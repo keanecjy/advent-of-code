@@ -1,4 +1,4 @@
-newList = list(open("Day01Input.txt", "r"))
+newList = open("Day01Input.txt", "r")
 newList = list(map(int, newList))
 
 sumNeeded = 2020

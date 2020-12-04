@@ -14,9 +14,7 @@ def split_string(string):
 
 def is_valid(string):
     idx1, idx2, letter, last = split_string(string)
-    if last[idx1] == letter and last[idx2] == letter:
-        return False
-    return last[idx1] == letter or last[idx2] == letter
+    return (last[idx1] == letter) ^ (last[idx2] == letter)
 
 
 num = 0

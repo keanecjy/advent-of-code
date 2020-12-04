@@ -1,4 +1,4 @@
-f = open('day03Input.txt', 'r').read()
+f = open('Day03Input.txt', 'r').read()
 
 array = f.split('\n')
 

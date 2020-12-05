@@ -1,6 +1,3 @@
-f = open("Day02Input.txt", "r")
-
-
 def split_string(string):
     arr = string.split('-', 2)
     idx1 = int(arr[0])
@@ -17,6 +14,7 @@ def is_valid(string):
     return (last[idx1] == letter) ^ (last[idx2] == letter)
 
 
+f = open("Day02Input.txt", "r")
 num = 0
 
 for line in f:

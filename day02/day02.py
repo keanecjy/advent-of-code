@@ -1,6 +1,3 @@
-f = open("Day02Input.txt", "r")
-
-
 def split_string(string):
     arr = string.split('-', 2)
     first = int(arr[0])
@@ -22,6 +19,7 @@ def has_sufficient_letters(string):
     return first <= count <= second
 
 
+f = open("Day02Input.txt", "r")
 num = 0
 
 for line in f:

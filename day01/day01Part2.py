@@ -1,5 +1,5 @@
-new_list = list(open("Day01Input.txt", "r"))
-new_list = map(int, new_list)
+f = list(open("Day01Input.txt", "r"))
+new_list = map(int, f)
 new_list = sorted(new_list)
 
 total = 2020

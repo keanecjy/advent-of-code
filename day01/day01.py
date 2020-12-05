@@ -1,5 +1,5 @@
-new_list = open("Day01Input.txt", "r")
-new_list = list(map(int, new_list))
+f = open("Day01Input.txt", "r")
+new_list = list(map(int, f))
 
 sum_needed = 2020
 hash_set = set()

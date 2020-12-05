@@ -1,9 +1,8 @@
-f = open('Day03Input.txt', 'r').read()
+with open('Day03Input.txt', 'r') as f:
+    data = f.read()
 
-array = f.split('\n')
-
+array = data.split('\n')
 len_horizontal = len(array[0])
-
 x = 0
 count = 0
 

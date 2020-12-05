@@ -41,16 +41,13 @@ def is_valid(word):
     return True
 
 
-f = open('Day04Input.txt', 'r')
+with open('Day04Input.txt', 'r') as f:
+    data = f.read()
 
-string = ''
 count = 0
-
-for line in f:
-    if line == '\n':
-        if is_valid(string):
-            count += 1
-        string = ''
-    string += line
+array = data.split('\n\n')
+for passport in array:
+    if is_valid(passport):
+        count += 1
 
 print(count)

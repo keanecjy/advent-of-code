@@ -1,10 +1,3 @@
-f = open('Day04Input.txt', 'r')
-
-string = ''
-count = 0
-ls = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
-
-
 def is_valid(word):
     for i in ls:
         if i not in word:
@@ -12,11 +5,15 @@ def is_valid(word):
     return True
 
 
-for line in f:
-    if line == '\n':
-        if is_valid(string):
-            count += 1
-        string = ''
-    string += line
+ls = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
+
+with open('Day04Input.txt', 'r') as f:
+    data = f.read()
+
+count = 0
+array = data.split('\n\n')
+for passport in array:
+    if is_valid(passport):
+        count += 1
 
 print(count)

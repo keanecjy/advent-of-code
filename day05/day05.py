@@ -43,5 +43,7 @@ for line in data:
 
 
 print(curr_max)
+
+# Part 2
 sum_expected = ((len(data) + 1) * (curr_max + curr_min)) / 2
 print(sum_expected - total)

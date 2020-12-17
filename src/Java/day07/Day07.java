@@ -1,3 +1,5 @@
+package Java.day07;
+
 import static java.lang.Integer.parseInt;
 
 import java.io.BufferedReader;

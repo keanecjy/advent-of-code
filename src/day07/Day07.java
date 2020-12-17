@@ -1,4 +1,4 @@
-package Java.day07;
+package day07;
 
 import static java.lang.Integer.parseInt;
 
